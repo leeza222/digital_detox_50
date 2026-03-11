@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Detox Hub - Break the Screen, Heal the Mind</title>
+    <meta name="description" content="Helping people reduce screen time and improve mental wellness through affordable detox tools and healthy habits.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chatbot styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* ============================================
+           VARIABLES & RESET
+           ============================================ */
+        
+        :root {
+            --primary-color: #9DC88D;
+            --secondary-color: #F5E6D3;
+            --accent-color: #B8D4E8;
+            --dark-color: #2C3E50;
+            --light-accent: #6C9A8B;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title .highlight {
+            color: var(--primary-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(44, 62, 80, 0.8);
+            max-width: 770px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(157, 200, 141, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--light-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(157, 200, 141, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light-accent);
+            color: var(--white);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(44, 62, 80, 0.7);
+        }
+        
+        /* ============================================
+           PROBLEMS SECTION
+           ============================================ */
+        
+        .problems {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: rgba(44, 62, 80, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .problem-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 20px ;
+        }
+        
+        /* ============================================
+           PRODUCTS SECTION
+           ============================================ */
+        
+        .products {
+            /* padding: 80px 0; */
+            background: linear-gradient(135deg, rgba(245, 230, 211, 0.3) 0%, var(--white) 100%);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            display: inline-block;
+            background: rgba(157, 200, 141, 0.2);
+            color: var(--light-accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .product-benefits {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-benefits li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            color: rgba(44, 62, 80, 0.7);
+        }
+        
+        .bundles-section {
+            margin-top: 4rem;
+        }
+        
+        .bundles-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .bundles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .bundle-card {
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .bundle-student {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+        
+        .bundle-work {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+        
+        .bundle-sleep {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        }
+        
+        .bundle-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .bundle-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .bundle-card ul li {
+            padding: 0.5rem 0;
+            color: rgba(44, 62, 80, 0.8);
+        }
+        
+        .bundle-price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        .btn-bundle {
+            padding: 0.75rem 2rem;
+            background: var(--dark-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-bundle:hover {
+            background: var(--light-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* ============================================
+           FEATURES SECTION
+           ============================================ */
+        
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(184, 212, 232, 0.2) 0%, rgba(245, 230, 211, 0.3) 100%);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-header i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .calculator {
+            margin-top: 1.5rem;
+        }
+        
+        .calculator label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .input-group input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid rgba(157, 200, 141, 0.3);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .btn-calculate {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-calculate:hover {
+            background: var(--light-accent);
+        }
+        
+        .score-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(157, 200, 141, 0.1) 0%, rgba(184, 212, 232, 0.1) 100%);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .score-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .score-status {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .score-bar {
+            width: 100%;
+            height: 1rem;
+            background: var(--secondary-color);
+            border-radius: 50px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .score-fill {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 1s ease;
+        }
+        
+        .score-recommendation {
+            font-size: 0.9rem;
+            color: rgba(44, 62, 80, 0.7);
+            margin-top: 1rem;
+        }
+        
+        .btn-challenge {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-challenge:hover {
+            transform: scale(1.02);
+        }
+        
+        .challenge-result {
+            margin-top: 1.5rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(184, 212, 232, 0.2) 0%, rgba(245, 230, 211, 0.2) 100%);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .challenge-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-result h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-result p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* ============================================
+           TIPS SECTION
+           ============================================ */
+        
+        .tips {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tip-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tip-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .difficulty {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .difficulty.easy {
+            background: rgba(157, 200, 141, 0.2);
+            color: var(--primary-color);
+        }
+        
+        .difficulty.medium {
+            background: rgba(184, 212, 232, 0.2);
+            color: var(--light-accent);
+        }
+        
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(245, 230, 211, 0.3) 0%, var(--white) 100%);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-card h3 {
+            font-size: 1.5rem;
+            padding: 1rem 1rem 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            padding: 0 1rem 1.5rem;
+            color: rgba(44, 62, 80, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer h3, .footer h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* ============================================
+           SHOPPING CART
+           ============================================ */
+
+        /* Floating cart FAB */
+        .cart-fab {
+            position: fixed;
+            top: 80px;
+            right: 28px;
+            z-index: 9998;
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent) 100%);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(108,154,139,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .cart-fab:hover { transform: scale(1.1); }
+
+        .cart-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #e74c3c;
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-badge.visible { display: flex; }
+
+        /* Overlay backdrop */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(44,62,80,0.38);
+            z-index: 9997;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .cart-overlay.active { opacity: 1; pointer-events: all; }
+
+        /* Cart Drawer */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -440px;
+            width: 420px;
+            height: 100vh;
+            background: var(--white);
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -8px 0 32px rgba(44,62,80,0.15);
+            transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+        .cart-drawer.open { right: 0; }
+
+        .cart-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent) 100%);
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        .cart-drawer-header h3 { color: var(--white); font-size: 1.05rem; font-weight: 600; margin: 0; }
+        .cart-drawer-header-left { display: flex; align-items: center; gap: 10px; }
+
+        .cart-dclose-btn {
+            background: rgba(255,255,255,0.18);
+            border: none;
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .cart-dclose-btn:hover { background: rgba(255,255,255,0.32); }
+
+        .cart-items-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px 18px;
+            background: #fafaf8;
+        }
+        .cart-items-list::-webkit-scrollbar { width: 4px; }
+        .cart-items-list::-webkit-scrollbar-thumb { background: #d0e8c8; border-radius: 4px; }
+
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #bbb;
+        }
+        .cart-empty i { font-size: 2.8rem; display: block; margin-bottom: 12px; color: #d0e8c8; }
+        .cart-empty p { font-size: 0.9rem; line-height: 1.6; }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+            animation: slideIn 0.25s ease;
+        }
+        @keyframes slideIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+        .cart-item-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .cart-item-info { flex: 1; min-width: 0; }
+        .cart-item-name { font-weight: 600; font-size: 0.85rem; color: var(--dark-color); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cart-item-price { color: var(--primary-color); font-weight: 700; font-size: 0.88rem; margin-bottom: 7px; }
+        .cart-item-controls { display: flex; align-items: center; gap: 7px; }
+        .qty-btn {
+            width: 26px; height: 26px;
+            border: 1.5px solid #d4e4cf;
+            background: var(--white);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.18s;
+        }
+        .qty-btn:hover { background: var(--primary-color); color: var(--white); border-color: var(--primary-color); }
+        .qty-value { font-weight: 600; font-size: 0.9rem; min-width: 20px; text-align: center; }
+        .cart-item-remove {
+            padding: 4px; background: none; border: none; cursor: pointer;
+            color: #ccc; font-size: 0.8rem; transition: color 0.2s; flex-shrink: 0;
+        }
+        .cart-item-remove:hover { color: #e74c3c; }
+
+        /* Cart Footer */
+        .cart-footer {
+            padding: 16px 20px;
+            background: var(--white);
+            border-top: 1px solid #edf2ec;
+            flex-shrink: 0;
+        }
+        .cart-summary-row {
+            display: flex; justify-content: space-between;
+            font-size: 0.82rem; color: #777; margin-bottom: 5px;
+        }
+        .cart-total-row {
+            display: flex; justify-content: space-between;
+            font-size: 1rem; font-weight: 700; color: var(--dark-color);
+            margin: 9px 0 14px; padding-top: 9px;
+            border-top: 2px solid #edf2ec;
+        }
+        .btn-checkout {
+            width: 100%; padding: 13px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent) 100%);
+            border: none; border-radius: 50px; color: var(--white);
+            font-size: 0.95rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(108,154,139,0.3);
+        }
+        .btn-checkout:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(108,154,139,0.42); }
+        .secure-label {
+            text-align: center; font-size: 0.7rem; color: #bbb;
+            margin-top: 8px; display: flex; align-items: center;
+            justify-content: center; gap: 4px;
+        }
+
+        /* Order Confirmation Modal */
+        .order-modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(44,62,80,0.5);
+            z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .order-modal-overlay.active { opacity: 1; pointer-events: all; }
+        .order-modal {
+            background: var(--white); border-radius: 20px;
+            width: 100%; max-width: 480px; max-height: 88vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(44,62,80,0.25);
+            animation: modal-pop 0.28s ease;
+        }
+        @keyframes modal-pop { from{transform:scale(0.9);opacity:0} to{transform:scale(1);opacity:1} }
+        .order-modal-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent) 100%);
+            padding: 20px 24px; border-radius: 20px 20px 0 0; color: var(--white);
+        }
+        .order-modal-header h3 { color: var(--white); font-size: 1.1rem; margin: 0 0 3px; }
+        .order-modal-header p { font-size: 0.78rem; opacity: 0.88; margin: 0; }
+        .order-modal-body { padding: 20px 24px; }
+        .order-item-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 9px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.86rem;
+        }
+        .order-item-row:last-child { border-bottom: none; }
+        .order-item-name { color: var(--dark-color); font-weight: 500; }
+        .order-item-qty { color: #aaa; font-size: 0.78rem; }
+        .order-item-price { font-weight: 700; color: var(--primary-color); }
+        .order-total-section {
+            background: #f7faf6; border-radius: 12px;
+            padding: 12px 16px; margin: 14px 0;
+        }
+        .order-total-section .o-row {
+            display: flex; justify-content: space-between;
+            font-size: 0.83rem; color: #777; margin-bottom: 5px;
+        }
+        .order-total-section .o-total {
+            display: flex; justify-content: space-between;
+            font-size: 1rem; font-weight: 700; color: var(--dark-color);
+            padding-top: 8px; border-top: 1.5px solid #e0eadf; margin-top: 5px;
+        }
+        .order-notice {
+            background: #fff8e8; border: 1px solid #f0e0b0;
+            border-radius: 10px; padding: 11px 13px;
+            font-size: 0.78rem; color: #7a5c00;
+            margin-bottom: 4px; display: flex; gap: 8px; align-items: flex-start;
+        }
+        .order-modal-actions { display: flex; flex-direction: column; gap: 9px; padding: 0 24px 20px; }
+        .btn-place-order {
+            padding: 13px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            border: none; border-radius: 50px; color: var(--white);
+            font-size: 0.95rem; font-weight: 700; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(39,174,96,0.3);
+        }
+        .btn-place-order:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39,174,96,0.4); }
+        .btn-cancel-order {
+            padding: 11px; background: none;
+            border: 1.5px solid #e0e0e0; border-radius: 50px;
+            color: #999; font-size: 0.88rem; cursor: pointer; transition: var(--transition);
+        }
+        .btn-cancel-order:hover { background: #f5f5f5; color: var(--dark-color); }
+
+        /* Product card — Add to Cart button */
+        .btn-add-cart {
+            width: 100%; padding: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-accent) 100%);
+            color: var(--white); border: none; border-radius: 50px;
+            cursor: pointer; font-weight: 600; font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 7px;
+        }
+        .btn-add-cart:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(108,154,139,0.35); }
+        .btn-add-cart.added { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .btn-add-cart:disabled { cursor: default; }
+
+        /* Bundle card — Add Bundle button */
+        .btn-bundle-cart {
+            width: 100%; padding: 0.75rem;
+            background: transparent; color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px; cursor: pointer;
+            font-weight: 600; font-size: 0.9rem; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 7px;
+        }
+        .btn-bundle-cart:hover { background: var(--primary-color); color: var(--white); }
+        .btn-bundle-cart.added { background: linear-gradient(135deg, #27ae60, #2ecc71); color: var(--white); border-color: transparent; }
+        .btn-bundle-cart:disabled { cursor: default; }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chatbot-window {
+                width: calc(100% - 2rem);
+                left: 1rem;
+                right: 1rem;
+            }
+
+            /* Cart drawer — full width on mobile */
+            .cart-drawer {
+                width: 100vw;
+                right: -100vw;
+            }
+
+            /* Cart FAB position on mobile */
+            .cart-fab {
+                top: 72px;
+                right: 16px;
+                width: 46px;
+                height: 46px;
+                font-size: 1.05rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    🌿 Digital Detox Hub
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Take a Break. <br>
+                    Reset Your Mind. <br>
+                    <span class="highlight">Detox Your Digital Life.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Your mind deserves offline time. Reduce screen addiction, improve mental wellness, 
+                    and reclaim your life with our curated detox tools and expert guidance.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Start Your Detox</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">10h+</div>
+                        <div class="stat-label">Average Daily Screen Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">Experience Eye Strain</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">Have Sleep Issues</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Feel Stressed Daily</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Understanding Screen Overuse Effects</h2>
+                <p class="section-subtitle">Excessive screen time impacts every aspect of your life. Here's how digital overload affects you.</p>
+            </div>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <i class="fas fa-eye icon"></i>
+                    <h3>Eye Strain</h3>
+                    <p>Prolonged screen exposure causes dry eyes, blurred vision, and headaches affecting your daily comfort.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-moon icon"></i>
+                    <h3>Sleep Disturbance</h3>
+                    <p>Blue light disrupts melatonin production, making it harder to fall asleep and reducing sleep quality.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-brain icon"></i>
+                    <h3>Stress & Anxiety</h3>
+                    <p>Constant notifications and information overload increase cortisol levels and mental exhaustion.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-chart-line icon"></i>
+                    <h3>Low Productivity</h3>
+                    <p>Digital distractions fragment focus, reducing deep work capability and overall efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Digital Detox Products</h2>
+                <p class="section-subtitle">Affordable tools to help you reduce screen time and improve your wellbeing.</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&h=300&fit=crop" alt="Blue Light Glasses">
+                        <span class="product-price">$15-25</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Eye Care</span>
+                        <h3 class="product-title">Blue Light Blocking Glasses</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Reduces eye strain</li>
+                            <li>✓ Better sleep</li>
+                            <li>✓ Prevents headaches</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="blue-light-glasses"
+                            data-name="Blue Light Blocking Glasses"
+                            data-price="20"
+                            data-image="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=blue+light+blocking+glasses"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/eye-relax.jpg" alt="Eye Roller">
+                        <span class="product-price">$8-15</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Eye Care</span>
+                        <h3 class="product-title">Eye Relaxation Roller</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Soothes tired eyes</li>
+                            <li>✓ Reduces puffiness</li>
+                            <li>✓ Cooling effect</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="eye-relaxation-roller"
+                            data-name="Eye Relaxation Roller"
+                            data-price="12"
+                            data-image="images/eye-relax.jpg"
+                            data-amazon="https://www.amazon.com/s?k=eye+relaxation+roller+cooling"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/eye-mask.jpg" alt="Sleep Mask">
+                        <span class="product-price">$10-20</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Sleep Recovery</span>
+                        <h3 class="product-title">Sleep Eye Mask</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Blocks all light</li>
+                            <li>✓ Improves sleep quality</li>
+                            <li>✓ Adjustable & comfortable</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="sleep-eye-mask"
+                            data-name="Sleep Eye Mask"
+                            data-price="15"
+                            data-image="images/eye-mask.jpg"
+                            data-amazon="https://www.amazon.com/s?k=sleep+eye+mask+blackout"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/salt-lamp.jpg" alt="Salt Lamp">
+                        <span class="product-price">$20-35</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Ambiance</span>
+                        <h3 class="product-title">Himalayan Salt Lamp</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Warm ambient light</li>
+                            <li>✓ Reduces blue light</li>
+                            <li>✓ Creates calm atmosphere</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="himalayan-salt-lamp"
+                            data-name="Himalayan Salt Lamp"
+                            data-price="28"
+                            data-image="images/salt-lamp.jpg"
+                            data-amazon="https://www.amazon.com/s?k=himalayan+salt+lamp"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400&h=300&fit=crop" alt="Journal">
+                        <span class="product-price">$12-18</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Reflection</span>
+                        <h3 class="product-title">Mindfulness Journal</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Offline reflection</li>
+                            <li>✓ Tracks progress</li>
+                            <li>✓ Reduces screen dependency</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="mindfulness-journal"
+                            data-name="Mindfulness Journal"
+                            data-price="15"
+                            data-image="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=mindfulness+journal+wellness"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Aromatherapy-with-candles.jpg" alt="Candles">
+                        <span class="product-price">$15-30</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Relaxation</span>
+                        <h3 class="product-title">Aromatherapy Candles</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Promotes relaxation</li>
+                            <li>✓ Better sleep</li>
+                            <li>✓ Stress relief</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="aromatherapy-candles"
+                            data-name="Aromatherapy Candles"
+                            data-price="22"
+                            data-image="images/Aromatherapy-with-candles.jpg"
+                            data-amazon="https://www.amazon.com/s?k=aromatherapy+candles+relaxation+wellness"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1611735341450-74d61e660ad2?w=400&h=300&fit=crop" alt="Fidget Tool">
+                        <span class="product-price">$10-15</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Focus</span>
+                        <h3 class="product-title">Stress Relief Fidget Tools</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Reduces phone reach</li>
+                            <li>✓ Improves focus</li>
+                            <li>✓ Relieves anxiety</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="fidget-tools"
+                            data-name="Stress Relief Fidget Tools"
+                            data-price="12"
+                            data-image="https://images.unsplash.com/photo-1611735341450-74d61e660ad2?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=stress+relief+fidget+toy+anxiety"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=400&h=300&fit=crop" alt="Timer">
+                        <span class="product-price">$15-25</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Productivity</span>
+                        <h3 class="product-title">Screen Time Timer</h3>
+                        <ul class="product-benefits">
+                            <li>✓ Visual time reminder</li>
+                            <li>✓ Builds discipline</li>
+                            <li>✓ No phone needed</li>
+                        </ul>
+                        <button class="btn-add-cart"
+                            data-id="screen-time-timer"
+                            data-name="Screen Time Timer"
+                            data-price="20"
+                            data-image="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=time+cube+timer+productivity"
+                            onclick="addToCart(this)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bundle Kits -->
+            <div class="bundles-section">
+                <h3 class="bundles-title">Curated Detox Bundles</h3>
+                <div class="bundles-grid">
+                    <div class="bundle-card bundle-student">
+                        <h4>🎓 Student Detox Kit</h4>
+                        <p>Perfect for students facing long study hours</p>
+                        <ul>
+                            <li>• Blue Light Glasses</li>
+                            <li>• Eye Roller</li>
+                            <li>• Fidget Tool</li>
+                            <li>• Study Timer</li>
+                        </ul>
+                        <div class="bundle-price">$45-70</div>
+                        <button class="btn-bundle-cart"
+                            data-id="bundle-student"
+                            data-name="Student Detox Kit 🎓"
+                            data-price="57"
+                            data-image="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=student+digital+detox+kit"
+                            onclick="addBundle(this)">
+                            <i class="fas fa-shopping-cart"></i> Add Bundle to Cart
+                        </button>
+                    </div>
+                    
+                    <div class="bundle-card bundle-work">
+                        <h4>💼 Work-from-Home Kit</h4>
+                        <p>Essential for remote workers</p>
+                        <ul>
+                            <li>• Blue Light Glasses</li>
+                            <li>• Salt Lamp</li>
+                            <li>• Eye Mask</li>
+                            <li>• Mindfulness Journal</li>
+                        </ul>
+                        <div class="bundle-price">$55-90</div>
+                        <button class="btn-bundle-cart"
+                            data-id="bundle-work"
+                            data-name="Work-from-Home Detox Kit 💼"
+                            data-price="72"
+                            data-image="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=work+from+home+wellness+kit"
+                            onclick="addBundle(this)">
+                            <i class="fas fa-shopping-cart"></i> Add Bundle to Cart
+                        </button>
+                    </div>
+                    
+                    <div class="bundle-card bundle-sleep">
+                        <h4>😴 Sleep Recovery Kit</h4>
+                        <p>Improve your sleep quality naturally</p>
+                        <ul>
+                            <li>• Eye Mask</li>
+                            <li>• Aromatherapy Candles</li>
+                            <li>• Salt Lamp</li>
+                            <li>• Journal</li>
+                        </ul>
+                        <div class="bundle-price">$50-85</div>
+                        <button class="btn-bundle-cart"
+                            data-id="bundle-sleep"
+                            data-name="Sleep Recovery Kit 😴"
+                            data-price="67"
+                            data-image="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=400&h=300&fit=crop"
+                            data-amazon="https://www.amazon.com/s?k=sleep+recovery+wellness+kit"
+                            onclick="addBundle(this)">
+                            <i class="fas fa-shopping-cart"></i> Add Bundle to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Screen Time Calculator -->
+                <div class="feature-box">
+                    <div class="feature-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Screen Time Calculator & Detox Score</h3>
+                    </div>
+                    <p>Calculate your daily screen time and get your personalized detox score.</p>
+                    
+                    <div class="calculator">
+                        <label>Daily Screen Time (hours)</label>
+                        <div class="input-group">
+                            <input type="number" id="screenTime" placeholder="e.g., 8.5" min="0" step="0.5">
+                            <button onclick="calculateScore()" class="btn-calculate">Calculate</button>
+                        </div>
+                        
+                        <div id="scoreResult" class="score-result" style="display: none;">
+                            <div class="score-number" id="scoreNumber">0</div>
+                            <div class="score-status" id="scoreStatus">Status</div>
+                            <div class="score-bar">
+                                <div class="score-fill" id="scoreFill"></div>
+                            </div>
+                            <p class="score-recommendation" id="scoreRecommendation"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Daily Challenge -->
+                <div class="feature-box">
+                    <div class="feature-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Daily Detox Challenge</h3>
+                    </div>
+                    <p>Get a random daily challenge to break screen addiction and build healthy habits.</p>
+                    
+                    <button onclick="generateChallenge()" class="btn-challenge">Generate Today's Challenge</button>
+                    
+                    <div id="challengeResult" class="challenge-result" style="display: none;">
+                        <div class="challenge-icon">🎯</div>
+                        <h4>Today's Challenge</h4>
+                        <p id="challengeText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Team -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">We are a student-led team building affordable digital wellness solutions using AI and affiliate platforms.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/leeza.jpg" alt="Leeza">
+                    </div>
+                    <h3>Leeza Khanjada</h3>
+                    <p class="team-role">Project Lead & AI Integration</p>
+                    <p class="team-bio">Leading the technical implementation and AI chatbot development.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/abu.jpg" alt="Abubakar">
+                    </div>
+                    <h3>Abubakar Siddiq</h3>
+                    <p class="team-role">Frontend Developer</p>
+                    <p class="team-bio">Crafting responsive UI/UX and product catalog systems.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/zu.jpg" alt="Juveriya">
+                    </div>
+                    <h3>Juveriya</h3>
+                    <p class="team-role">Content & Research</p>
+                    <p class="team-bio">Researching digital wellness strategies and curating content.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/krupa.jpg" alt="Krupa">
+                    </div>
+                    <h3>Krupa</h3>
+                    <p class="team-role">Design & Marketing</p>
+                    <p class="team-bio">Designing the wellness aesthetic and affiliate strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>🌿 Digital Detox Hub</h3>
+                    <p>Disconnect to reconnect. Your mind deserves offline time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>team@digitaldetoxhub.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Digital Detox Hub. Made with 💚 by students for wellness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // ============================================
+        // SMOOTH SCROLLING
+        // ============================================
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // ============================================
+        // NAVBAR SCROLL EFFECT
+        // ============================================
+        
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // ============================================
+        // SCREEN TIME CALCULATOR
+        // ============================================
+        
+        function calculateScore() {
+            const screenTimeInput = document.getElementById('screenTime');
+            const scoreResult = document.getElementById('scoreResult');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const scoreStatus = document.getElementById('scoreStatus');
+            const scoreFill = document.getElementById('scoreFill');
+            const scoreRecommendation = document.getElementById('scoreRecommendation');
+            
+            const hours = parseFloat(screenTimeInput.value);
+            
+            if (isNaN(hours) || hours < 0) {
+                alert('Please enter a valid number of hours');
+                return;
+            }
+            
+            let score, status, recommendation, color;
+            
+            if (hours <= 4) {
+                score = 90;
+                status = 'Excellent';
+                recommendation = 'Great balance! Keep maintaining healthy screen habits.';
+                color = '#9DC88D';
+            } else if (hours <= 6) {
+                score = 75;
+                status = 'Good';
+                recommendation = 'You\'re doing well. Try to reduce by 30 minutes daily.';
+                color = '#9DC88D';
+            } else if (hours <= 8) {
+                score = 60;
+                status = 'Moderate';
+                recommendation = 'Consider taking regular breaks and using blue light filters.';
+                color = '#F4C430';
+            } else if (hours <= 10) {
+                score = 40;
+                status = 'High';
+                recommendation = 'Time for a detox! Start with the 20-20-20 eye rule.';
+                color = '#FFA500';
+            } else {
+                score = 20;
+                status = 'Critical';
+                recommendation = 'Urgent detox needed. Chat with our AI assistant for personalized help.';
+                color = '#FF4444';
+            }
+            
+            // Show result with animation
+            scoreResult.style.display = 'block';
+            scoreNumber.textContent = score;
+            scoreStatus.textContent = status;
+            scoreRecommendation.textContent = '💡 ' + recommendation;
+            scoreFill.style.width = score + '%';
+            scoreFill.style.background = color;
+            
+            // Animate the score
+            let currentScore = 0;
+            const interval = setInterval(() => {
+                if (currentScore >= score) {
+                    clearInterval(interval);
+                } else {
+                    currentScore += 2;
+                    scoreNumber.textContent = currentScore;
+                }
+            }, 20);
+        }
+        
+        // ============================================
+        // DAILY CHALLENGE GENERATOR
+        // ============================================
+        
+        const challenges = [
+            '📱 Phone-Free Breakfast - Start your day without screens for 1 hour',
+            '👁️ 20-20-20 Eye Rule - Practice every hour during work',
+            '🚶 Walking Break - Take a 10-minute outdoor walk without your phone',
+            '📚 Read Paper Book - 30 minutes of physical book reading',
+            '🧘 5-Minute Meditation - Mindful breathing without devices',
+            '🌅 No Screens Before Bed - 1 hour of device-free time before sleep',
+            '🎨 Creative Offline Activity - Draw, paint, or craft for 20 minutes',
+            '👥 Real Conversation - Talk to someone face-to-face for 15 minutes',
+            '🌳 Nature Time - Spend 30 minutes outdoors without phone',
+            '✍️ Journal Writing - 10 minutes of handwritten reflection'
+        ];
+        
+        function generateChallenge() {
+            const challengeResult = document.getElementById('challengeResult');
+            const challengeText = document.getElementById('challengeText');
+            
+            const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
+            
+            challengeText.textContent = randomChallenge;
+            challengeResult.style.display = 'block';
+            
+            // Animate the appearance
+            challengeResult.style.opacity = '0';
+            challengeResult.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                challengeResult.style.transition = 'all 0.3s ease';
+                challengeResult.style.opacity = '1';
+                challengeResult.style.transform = 'scale(1)';
+            }, 10);
+        }
+        
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.product-card, .problem-card, .tip-card, .team-card');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+        
+        // ============================================
+        // SHOPPING CART ENGINE
+        // ============================================
+
+        // cart state: { [id]: { name, price, image, amazon, qty } }
+        const cart = {};
+
+        function addToCart(btn) {
+            const { id, name, price, image, amazon } = btn.dataset;
+            if (cart[id]) {
+                cart[id].qty++;
+            } else {
+                cart[id] = { name, price: parseFloat(price), image, amazon, qty: 1 };
+            }
+            updateCartBadge();
+            renderCartItems();
+            showAddedFeedback(btn);
+        }
+
+        function addBundle(btn) {
+            const { id, name, price, image, amazon } = btn.dataset;
+            if (cart[id]) {
+                cart[id].qty++;
+            } else {
+                cart[id] = { name, price: parseFloat(price), image, amazon, qty: 1 };
+            }
+            updateCartBadge();
+            renderCartItems();
+            showAddedFeedback(btn);
+        }
+
+        function removeFromCart(id) {
+            delete cart[id];
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function updateQty(id, delta) {
+            if (!cart[id]) return;
+            cart[id].qty += delta;
+            if (cart[id].qty <= 0) delete cart[id];
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function getCartTotal() {
+            return Object.values(cart).reduce((sum, i) => sum + i.price * i.qty, 0);
+        }
+
+        function getCartCount() {
+            return Object.values(cart).reduce((sum, i) => sum + i.qty, 0);
+        }
+
+        function updateCartBadge() {
+            const count = getCartCount();
+            const badge = document.getElementById('cartBadge');
+            badge.textContent = count;
+            badge.classList.toggle('visible', count > 0);
+        }
+
+        function renderCartItems() {
+            const list   = document.getElementById('cartItemsList');
+            const footer = document.getElementById('cartFooter');
+            const items  = Object.entries(cart);
+
+            if (items.length === 0) {
+                list.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>Your cart is empty.<br>Add some wellness products!</p>
+                    </div>`;
+                footer.style.display = 'none';
+                return;
+            }
+
+            footer.style.display = 'block';
+            list.innerHTML = items.map(([id, item]) => `
+                <div class="cart-item">
+                    <img class="cart-item-img" src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+                        <div class="cart-item-controls">
+                            <button class="qty-btn" onclick="updateQty('${id}', -1)">−</button>
+                            <span class="qty-value">${item.qty}</span>
+                            <button class="qty-btn" onclick="updateQty('${id}', 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${id}')" aria-label="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>`).join('');
+
+            const total = getCartTotal();
+            document.getElementById('cartSubtotal').textContent = '$' + total.toFixed(2);
+            document.getElementById('cartTotal').textContent    = '$' + total.toFixed(2);
+        }
+
+        function openCart() {
+            document.getElementById('cartDrawer').classList.add('open');
+            document.getElementById('cartOverlay').classList.add('active');
+            renderCartItems();
+        }
+
+        function closeCart() {
+            document.getElementById('cartDrawer').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('active');
+        }
+
+        function showAddedFeedback(btn) {
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+            btn.classList.add('added');
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.classList.remove('added');
+                btn.disabled = false;
+            }, 1500);
+            openCart();
+        }
+
+        function openOrderModal() {
+            const items = Object.entries(cart);
+            if (items.length === 0) return;
+
+            const total = getCartTotal();
+            const count = getCartCount();
+
+            document.getElementById('orderItemsList').innerHTML = items.map(([, item]) => `
+                <div class="order-item-row">
+                    <div>
+                        <div class="order-item-name">${item.name}</div>
+                        <div class="order-item-qty">Qty: ${item.qty}</div>
+                    </div>
+                    <div class="order-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+                </div>`).join('');
+
+            document.getElementById('orderSubtotal').textContent  = '$' + total.toFixed(2);
+            document.getElementById('orderTotal').textContent      = '$' + total.toFixed(2);
+            document.getElementById('orderItemCount').textContent  = count + ' item' + (count !== 1 ? 's' : '');
+
+            closeCart();
+            document.getElementById('orderModalOverlay').classList.add('active');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderModalOverlay').classList.remove('active');
+            openCart();
+        }
+
+        function placeOrder() {
+            const items = Object.entries(cart);
+            if (items.length === 0) return;
+
+            // Open each product on Amazon (staggered to avoid pop-up blockers)
+            items.forEach(([, item], index) => {
+                setTimeout(() => window.open(item.amazon, '_blank'), index * 600);
+            });
+
+            // Clear cart
+            Object.keys(cart).forEach(k => delete cart[k]);
+            updateCartBadge();
+
+            // Show thank-you screen
+            document.getElementById('orderModalOverlay').classList.remove('active');
+            setTimeout(showThankYou, 300);
+        }
+
+        function showThankYou() {
+            const overlay = document.getElementById('orderModalOverlay');
+            const modal   = document.getElementById('orderModal');
+            modal.innerHTML = `
+                <div style="text-align:center;padding:44px 28px;">
+                    <div style="font-size:3.5rem;margin-bottom:16px;">🎉</div>
+                    <h3 style="font-size:1.3rem;color:var(--dark-color);margin-bottom:10px;">
+                        Order Placed Successfully!
+                    </h3>
+                    <p style="color:#777;font-size:0.9rem;line-height:1.7;margin-bottom:24px;">
+                        Your Amazon product tabs have opened.<br>
+                        Complete your purchase there — then come back!<br>
+                        <strong style="color:var(--primary-color);">Your wellness journey starts now 🌿</strong>
+                    </p>
+                    <button class="btn-place-order" style="max-width:220px;margin:0 auto;"
+                        onclick="document.getElementById('orderModalOverlay').classList.remove('active')">
+                        Done ✓
+                    </button>
+                </div>`;
+            overlay.classList.add('active');
+        }
+        
+        // ============================================
+        // CONSOLE MESSAGE
+        // ============================================
+        
+        console.log('%c🌿 Digital Detox Hub', 'color: #9DC88D; font-size: 20px; font-weight: bold;');
+        console.log('%cMade with 💚 by students for digital wellness', 'color: #6C9A8B; font-size: 12px;');
+        console.log('%cWebsite loaded successfully!', 'color: #2C3E50;');
+    </script>
+
+    <!-- ================================================
+         SHOPPING CART
+         Floating FAB → Slide-in drawer → Order confirmation modal
+         All branded — users never feel they left the site.
+         ================================================ -->
+
+    <!-- Floating cart button (top-right, below navbar) -->
+    <button id="cartFab" class="cart-fab" onclick="openCart()" aria-label="View shopping cart">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+        <span id="cartBadge" class="cart-badge" aria-live="polite">0</span>
+    </button>
+
+    <!-- Backdrop (click to close) -->
+    <div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
+
+    <!-- Cart Drawer (slides in from right) -->
+    <div id="cartDrawer" class="cart-drawer" role="dialog" aria-label="Shopping cart">
+        <div class="cart-drawer-header">
+            <div class="cart-drawer-header-left">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                <h3>Your Cart</h3>
+            </div>
+            <button class="cart-dclose-btn" onclick="closeCart()" aria-label="Close cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Cart items list -->
+        <div id="cartItemsList" class="cart-items-list">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Your cart is empty.<br>Add some wellness products!</p>
+            </div>
+        </div>
+
+        <!-- Cart footer: subtotal + checkout button -->
+        <div id="cartFooter" class="cart-footer" style="display:none;">
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>Shipping</span>
+                <span style="color:#27ae60;font-weight:600;">FREE via Amazon Prime</span>
+            </div>
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn-checkout" onclick="openOrderModal()">
+                <i class="fas fa-lock" style="margin-right:6px;font-size:0.85rem;"></i>
+                Review &amp; Place Order
+            </button>
+            <div class="secure-label">
+                <i class="fas fa-shield-alt"></i> Secure checkout via Amazon
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderModalOverlay" class="order-modal-overlay" role="dialog" aria-label="Order confirmation">
+        <div id="orderModal" class="order-modal">
+            <div class="order-modal-header">
+                <h3>🌿 Review Your Order</h3>
+                <p>Confirm your items before we send you to secure checkout</p>
+            </div>
+            <div class="order-modal-body">
+                <div id="orderItemsList"></div>
+                <div class="order-total-section">
+                    <div class="o-row">
+                        <span>Subtotal (<span id="orderItemCount"></span>)</span>
+                        <span id="orderSubtotal"></span>
+                    </div>
+                    <div class="o-row">
+                        <span>Shipping</span>
+                        <span style="color:#27ae60;font-weight:600;">FREE</span>
+                    </div>
+                    <div class="o-total">
+                        <span>Total</span>
+                        <span id="orderTotal"></span>
+                    </div>
+                </div>
+                <div class="order-notice">
+                    <i class="fas fa-info-circle" style="flex-shrink:0;margin-top:2px;"></i>
+                    <span>
+                        Each product will open in a secure Amazon tab for checkout.
+                        All sellers are verified by Amazon — your payment is always protected.
+                    </span>
+                </div>
+            </div>
+            <div class="order-modal-actions">
+                <button class="btn-place-order" onclick="placeOrder()">
+                    <i class="fas fa-shopping-bag"></i> Confirm &amp; Place Order
+                </button>
+                <button class="btn-cancel-order" onclick="closeOrderModal()">
+                    ← Back to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================
+         CHATBOT WIDGET
+         Floating button (bottom-right) + sliding chat window.
+         Powered by Python Flask backend → Google Gemini.
+         ================================================ -->
+    <div class="chatbot-wrapper" role="complementary" aria-label="Digital Wellness Chatbot">
+
+      <!-- Floating toggle button -->
+      <button
+        id="chatToggleBtn"
+        class="chat-toggle-btn"
+        aria-label="Open wellness chatbot"
+        aria-expanded="false"
+        aria-controls="chatWindow"
+      >
+        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+        <span class="chat-tooltip">Chat with your wellness assistant</span>
+      </button>
+
+      <!-- Sliding chat window -->
+      <div
+        id="chatWindow"
+        class="chat-window"
+        role="dialog"
+        aria-label="Wellness chatbot window"
+        aria-modal="false"
+      >
+
+        <!-- Header -->
+        <div class="chat-header">
+          <div class="chat-header-info">
+            <div class="chat-avatar" aria-hidden="true">🌿</div>
+            <div>
+              <h4>Wellness Assistant</h4>
+              <span class="chat-status">Online</span>
+            </div>
+          </div>
+          <button
+            id="chatCloseBtn"
+            class="chat-close-btn"
+            aria-label="Close chatbot"
+          >
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Message history -->
+        <div
+          id="chatMessages"
+          class="chat-messages"
+          role="log"
+          aria-live="polite"
+          aria-atomic="false"
+        ></div>
+
+        <!-- AI typing indicator -->
+        <div id="chatTyping" class="chat-typing" aria-label="Assistant is typing" aria-live="polite">
+          <span></span><span></span><span></span>
+        </div>
+
+        <!-- Input area -->
+        <div class="chat-input-area">
+          <textarea
+            id="chatInput"
+            placeholder="Ask me about screen time, mindfulness&#8230;"
+            rows="1"
+            aria-label="Your message"
+            maxlength="800"
+          ></textarea>
+          <button
+            id="chatSendBtn"
+            aria-label="Send message"
+          >
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </div>
+
+      </div><!-- /.chat-window -->
+    </div><!-- /.chatbot-wrapper -->
+
+    <!-- Chatbot logic (calls Python Flask backend) -->
+    <script src="chatbot.js"></script>
+
+</body>
+</html>
